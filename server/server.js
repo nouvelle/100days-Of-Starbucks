@@ -12,8 +12,15 @@ const client = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
+// https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
+// since_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより未来のツイートを取得できる。
+// max_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより過去のツイートを取得できる。
 app.get("/", (req, res) => {
-  const params = { screen_name: 'e_chai' };
+  const { since_id, max_id } = req.query;
+  let params = { screen_name: 'e_chai', count: 25, exclude_replies: true};
+  if(max_id) params = {...params, max_id: max_id};
+  if(since_id) params = {...params, since_id: since_id};
+  
   client.get('statuses/user_timeline', params, (error, tweets, response) => {
     if (!error) {
       const isHashtag = tweets.filter(obj => obj.entities.hashtags.length > 0);
@@ -25,6 +32,7 @@ app.get("/", (req, res) => {
       })
       const datas = sbux_100days.map(data => {
         return {
+          id: data.id,
           created_at: data.created_at,
           text: data.text,
           entities: data.entities,
@@ -40,6 +48,7 @@ app.get("/", (req, res) => {
               <div>${t.created_at}</div>
               <div>${t.text}</div>
               <img src=${t.imgUrl} width="200px"/>
+              <p>${t.id}</p>
             </p>
           `);
         } else {
@@ -47,6 +56,7 @@ app.get("/", (req, res) => {
           <p>
             <div>${t.created_at}</div>
             <div>${t.text}</div>
+            <p>${t.id}</p>
           </p>
         `);
         }

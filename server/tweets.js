@@ -12,6 +12,7 @@ const customizeTweets = (datas) => {
     }
     return {
       // created_at: moment(data.created_at).format("YYYY/MM/DD ddd HH:mm"),
+      id: data.id,
       created_at: data.created_at,
       text: data.text,
       imgUrl: imgUrl
