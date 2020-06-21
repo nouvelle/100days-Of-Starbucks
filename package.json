@@ -14,16 +14,18 @@
     "dev": "nodemon server/server.js"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.4",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
     "react-helmet": "^6.1.0",
-    "twitter": "^1.7.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2"
+    "react-kawaii": "^0.16.0",
+    "react-scripts": "3.4.1",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

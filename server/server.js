@@ -15,9 +15,9 @@ const client = new Twitter({
 // https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
 // since_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより未来のツイートを取得できる。
 // max_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより過去のツイートを取得できる。
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   const { since_id, max_id } = req.query;
-  let params = { screen_name: 'e_chai', count: 25, exclude_replies: true};
+  let params = { screen_name: 'e_chai', count: 50, exclude_replies: true};
   if(max_id) params = {...params, max_id: max_id};
   if(since_id) params = {...params, since_id: since_id};
   
@@ -46,8 +46,8 @@ app.get("/", (req, res) => {
         }
       });
       
-      // res.send(tweetsArr);
-      res.send(view.join(''));
+      res.send(customizeTweetArr);
+      // res.send(view.join(''));
     } else { 
       console.log(error);
       res.send("Hey :(");
@@ -56,7 +56,7 @@ app.get("/", (req, res) => {
 });
 
 // https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
-app.get("/search",  (req, res) => {
+app.get("/api/search",  (req, res) => {
   // const params = { q: '100DaysOfStarbucks', count: 5 };
   const params = { q: 'Starbucks', count: 5 };
   client.get('search/tweets', params, (error, data, response) => {
