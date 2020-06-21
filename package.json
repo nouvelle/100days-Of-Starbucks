@@ -16,8 +16,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "gatsby": "^2.23.7",
+    "gatsby-plugin-react-helmet": "^3.3.4",
+    "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
