@@ -1,0 +1,25 @@
+{
+  "name": "tweet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nouvelle/tweet.git",
+  "author": "nouvelle <nouvellenuts@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "gatsby": "^2.23.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
