@@ -6,25 +6,39 @@
   "author": "nouvelle <nouvellenuts@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "client": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "start": "node server/server.js",
     "dev": "nodemon server/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "gatsby": "^2.23.7",
-    "gatsby-plugin-react-helmet": "^3.3.4",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
     "react-helmet": "^6.1.0",
-    "twitter": "^1.7.1"
+    "twitter": "^1.7.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
