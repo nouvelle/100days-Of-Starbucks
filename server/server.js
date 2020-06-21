@@ -1,5 +1,6 @@
 const express = require("express");
 const Twitter = require("twitter");
+const { customizeTweets } = require("./tweets");
 require("dotenv").config();
 const app = express();
 
@@ -15,10 +16,44 @@ app.get("/", (req, res) => {
   const params = { screen_name: 'e_chai' };
   client.get('statuses/user_timeline', params, (error, tweets, response) => {
     if (!error) {
-      // console.log(tweets);
-      const rtn_tweets = tweets.map(obj => obj.text);
+      const isHashtag = tweets.filter(obj => obj.entities.hashtags.length > 0);
+      const sbux_100days = isHashtag.filter(hash => {
+        const hashArr =  hash.entities.hashtags.filter(hash => {
+          return hash.text === '100DaysOfStarbucks';
+        });
+        return hashArr.length > 0;
+      })
+      const datas = sbux_100days.map(data => {
+        return {
+          created_at: data.created_at,
+          text: data.text,
+          entities: data.entities,
+          extended_entities: data.extended_entities,
+        };
+      })
       
-      res.send("Hey :)" + rtn_tweets);
+      const tweetsArr = customizeTweets(datas);
+      const view = tweetsArr.map(t => {
+        if(t.imgUrl){
+          return (`
+            <p>
+              <div>${t.created_at}</div>
+              <div>${t.text}</div>
+              <img src=${t.imgUrl} width="200px"/>
+            </p>
+          `);
+        } else {
+          return (`
+          <p>
+            <div>${t.created_at}</div>
+            <div>${t.text}</div>
+          </p>
+        `);
+        }
+      });
+      
+      // res.send(tweetsArr);
+      res.send(view.join(''));
     } else { 
       console.log(error);
       res.send("Hey :(");
