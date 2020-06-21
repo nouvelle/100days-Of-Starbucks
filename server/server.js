@@ -1,6 +1,6 @@
 const express = require("express");
 const Twitter = require("twitter");
-const { customizeTweets } = require("./tweets");
+const { customizeTweets, getSpecificHashTweets } = require("./tweets");
 require("dotenv").config();
 const app = express();
 
@@ -23,25 +23,9 @@ app.get("/", (req, res) => {
   
   client.get('statuses/user_timeline', params, (error, tweets, response) => {
     if (!error) {
-      const isHashtag = tweets.filter(obj => obj.entities.hashtags.length > 0);
-      const sbux_100days = isHashtag.filter(hash => {
-        const hashArr =  hash.entities.hashtags.filter(hash => {
-          return hash.text === '100DaysOfStarbucks';
-        });
-        return hashArr.length > 0;
-      })
-      const datas = sbux_100days.map(data => {
-        return {
-          id: data.id,
-          created_at: data.created_at,
-          text: data.text,
-          entities: data.entities,
-          extended_entities: data.extended_entities,
-        };
-      })
-      
-      const tweetsArr = customizeTweets(datas);
-      const view = tweetsArr.map(t => {
+      const specificHashTweetArr = getSpecificHashTweets(tweets);
+      const customizeTweetArr = customizeTweets(specificHashTweetArr);
+      const view = customizeTweetArr.map(t => {
         if(t.imgUrl){
           return (`
             <p>
