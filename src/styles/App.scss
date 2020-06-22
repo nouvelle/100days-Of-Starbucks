@@ -1,9 +1,11 @@
+$test : 20vmin;
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  // height: 40vmin;
+  height: $test;
   pointer-events: none;
 }
 

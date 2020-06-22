@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
-import '../styles/App.css';
+import '../styles/App.scss';
 
 function App() {
   // fetch('/api').then(data => data.json()).then(data => console.log(data));
