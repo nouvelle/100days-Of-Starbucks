@@ -92,9 +92,9 @@ img {
 
 /* large-window */
 .large-window {
-  width: 510px;
-  height: 510px;
-  margin-left: 65px;
+  width: 480px;
+  height: 480px;
+  margin: 0 auto;
   background-image: url("./img/tate04.jpg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -107,5 +107,9 @@ img {
 @media (max-width: 480px) {
   #logo {
     font-size: 30px;
+  }
+  .large-window {
+    width: 350px;
+    height: 350px;
   }
 }
