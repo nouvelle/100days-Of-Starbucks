@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Kosugi Maru', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -19,7 +19,9 @@ figure {
   margin: 0 auto;
   text-align: center;
 }
-
+.img-row {
+  display: flex;
+}
 img {
   max-width: 100%;
 }
@@ -32,8 +34,9 @@ img {
   background-size: auto 600px;
   background-position: top center;
   background-attachment: fixed;
+  overflow: hidden;
 }
-.logo {
+#logo {
   font-size: 45px;
   font-family: 'Kranky', cursive;
   width: 100%;
@@ -44,4 +47,41 @@ img {
   top: 50%;
   margin-top: -50px;
   color: #fff;
+}
+#fore-home {
+  width: 960px;
+  height: 320px;
+  /* background-color: rgba(56, 250, 56, 0.3); */
+  background-image: url(./slime.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  position: absolute;
+  left: 50%;
+  margin-left: -480px;
+  top: 350px;
+}
+#back-home {
+  width: 960px;
+  height: 320px;
+  /* background-color: rgba(56, 250, 56, 0.3); */
+  background-image: url(./slime.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  position: absolute;
+  left: 50%;
+  margin-left: -480px;
+}
+
+/* image grid */
+#tweet-box figure {
+  margin-bottom: 20px;
+  position: relative;
+  margin-right: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease-in-out;
+}
+#tweet-box figure.is-showing {
+  opacity: 1;
+  transform: translateX(0px);
 }
