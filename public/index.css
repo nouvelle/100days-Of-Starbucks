@@ -1,16 +1,20 @@
 body {
-  font-family: 'Kosugi Maru', sans-serif;
+  font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 h1 {
   color: #ccc;
-  font-weight: 300;
+  font-size: 45px;
 }
 
 figure {
   margin: auto;
+}
+
+p {
+  margin: 30px 0;
 }
 
 .content {
@@ -85,6 +89,20 @@ img {
   opacity: 1;
   transform: translateX(0px);
 }
+
+/* large-window */
+.large-window {
+  width: 510px;
+  height: 510px;
+  margin-left: 65px;
+  background-image: url("./img/tate04.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 100px;
+  border-radius: 50%;
+}
+
 
 @media (max-width: 480px) {
   #logo {
