@@ -17,9 +17,9 @@ window.onscroll = () => {
   // backHome.style.transform = `translate(0px, ${yScroll /4}%)`;
   // foreHome.style.transform = `translate(0px, -${yScroll /10}%)`;
 
-  // 縦スクロールの位置が "tweetBox - 画面の高さ / 1.2" だったら...
-  // つまり、tweetBox のちょい上になったら下記が動作する
-  if(yScroll > tweetBox.offsetTop - window.innerHeight / 1.2){
+  // getBoundingClientRect() : 画面左上を基準とする位置
+  // tweetBox のちょい上になったら下記が動作する
+  if(yScroll > tweetBox.getBoundingClientRect().top / 1.9){
     for(let i = 0; i < figure.length; i++){
       setTimeout(() => {
         figure[i].classList.add("is-showing");
@@ -39,7 +39,8 @@ window.onscroll = () => {
   // 縦スクロールの位置が "tweetPosts - 画面の高さ" だったら...
   // つまり、tweetPosts が画面の bottom に触れたら下記が動作する
   if(yScroll > tweetPosts.offsetTop - window.innerHeight) {
-    const offset = Math.min(0, yScroll - tweetPosts.offsetTop + window.innerHeight - 350);
+    const offset = (Math.min(0, yScroll - tweetPosts.offsetTop + window.innerHeight - 950)).toFixed();
+
     post1.style.transform = `translate(${offset}px, ${Math.abs(offset * 0.2)}px)`;
     post3.style.transform = `translate(${Math.abs(offset)}px, ${Math.abs(offset * 0.2)}px)`;
   }

@@ -6,7 +6,7 @@ body {
 
 h1 {
   color: #ccc;
-  font-size: 45px;
+  font-size: 40px;
 }
 
 figure {
@@ -18,15 +18,21 @@ p {
 }
 
 .content {
-  padding:  100px 0;
+  /* margin: 0 auto; */
+  /* text-align: center; */
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 400px;
+  overflow: hidden;
+  z-index: 2;
+}
+.content article {
+  padding: 100px 0;
   max-width: 640px;
   margin: 0 auto;
   text-align: center;
 }
-.row {
-  display: flex;
-  justify-content: space-between
-}
+
 img {
   max-width: 100%;
 }
@@ -40,6 +46,7 @@ img {
   background-position: top center;
   background-attachment: fixed;
   overflow: hidden;
+  z-index: 3;
 }
 #logo {
   font-size: 45px;
@@ -77,14 +84,9 @@ img {
   margin-left: -480px;
 }
 
-/* image grid */
-#tweet-box .img-row {
-  margin-right: -10px;
-}
 #tweet-box figure {
   margin-bottom: 20px;
   position: relative;
-  margin-right: 10px;
   opacity: 0;
   transform: translateX(20px);
   transition: all 0.3s ease-in-out;
@@ -171,11 +173,9 @@ img {
 /* Tweet post */
 #tweet-posts {
   margin-top: 100px;
-  margin-right: -10px;
 }
 .post {
   border: 1px solid #e1e1e1;
-  margin-right: 10px;
   padding: 20px 20px 0;
   background: #fff;
   position: relative;
@@ -190,6 +190,44 @@ img {
   transform: translate(-100px, 20px);
 }
 
+/* footer */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer .footer-stuff {
+  max-width: 640px;
+  margin: 0 auto;
+}
+footer a {
+  color: #fff;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+/* For devices ~ 480px */
 @media (max-width: 480px) {
   #logo {
     font-size: 30px;
@@ -200,4 +238,48 @@ img {
     background-attachment: initial;
     background-position: bottom center;
   }
+}
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  #logo {
+    font-size: 30px;
+  }
+  #large-window {
+    width: 350px;
+    height: 350px;
+    background-attachment: initial;
+    background-position: bottom center;
+  }
+  .columns {
+    margin-left: 4%; }
+
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.columns {
+    width: 4.66666666667%; }
+
+  .two.columns {
+    width: 13.3333333333%; }
+
+  .three.columns {
+    width: 22%; }
+
+  .four.columns {
+    width: 30.6666666667%; }
+
+  .five.columns {
+    width: 39.3333333333%; }
+
+  .six.columns {
+    width: 48%; }
+
+  .seven.columns {
+    width: 56.6666666667%; }
+
+  .eight.columns {
+    width: 65.3333333333%; }
+
+  .nine.columns {
+    width: 74.0%; }
 }
