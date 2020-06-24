@@ -6,6 +6,10 @@ window.onscroll = () => {
   const figure = document.getElementsByTagName("figure");
   const largeWindow = document.getElementById("large-window");
   const windowTint = document.getElementById("window-tint");
+  const tweetPosts = document.getElementById("tweet-posts");
+  const post1 = document.getElementById("post-1");
+  const post2 = document.getElementById("post-2");
+  const post3 = document.getElementById("post-3");
   let yScroll = window.pageYOffset
   console.log(yScroll);
 
@@ -30,5 +34,13 @@ window.onscroll = () => {
 
     const opacity = (yScroll - largeWindow.offsetTop + 400) / (yScroll / 5);
     windowTint.style.opacity = `${opacity}`;
+  }
+
+  // 縦スクロールの位置が "tweetPosts - 画面の高さ" だったら...
+  // つまり、tweetPosts が画面の bottom に触れたら下記が動作する
+  if(yScroll > tweetPosts.offsetTop - window.innerHeight) {
+    const offset = Math.min(0, yScroll - tweetPosts.offsetTop + window.innerHeight - 350);
+    post1.style.transform = `translate(${offset}px, ${Math.abs(offset * 0.2)}px)`;
+    post3.style.transform = `translate(${Math.abs(offset)}px, ${Math.abs(offset * 0.2)}px)`;
   }
 }

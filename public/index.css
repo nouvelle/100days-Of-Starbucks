@@ -23,8 +23,9 @@ p {
   margin: 0 auto;
   text-align: center;
 }
-.img-row {
+.row {
   display: flex;
+  justify-content: space-between
 }
 img {
   max-width: 100%;
@@ -77,6 +78,9 @@ img {
 }
 
 /* image grid */
+#tweet-box .img-row {
+  margin-right: -10px;
+}
 #tweet-box figure {
   margin-bottom: 20px;
   position: relative;
@@ -122,6 +126,7 @@ img {
   background-position: top center;
   background-repeat: repeat-y;
   margin-top: 100px;
+  margin-bottom: 100px;
   border-radius: 50%;
   position: relative;
 }
@@ -161,6 +166,28 @@ img {
 .twitter-link:hover {
   background: rgba(255,255,255,0.7);
   color: #000;
+}
+
+/* Tweet post */
+#tweet-posts {
+  margin-top: 100px;
+  margin-right: -10px;
+}
+.post {
+  border: 1px solid #e1e1e1;
+  margin-right: 10px;
+  padding: 20px 20px 0;
+  background: #fff;
+  position: relative;
+}
+#post-1 {
+  transform: translate(100px, 20px);
+}
+#post-2 {
+  z-index: 2;
+}
+#post-3 {
+  transform: translate(-100px, 20px);
 }
 
 @media (max-width: 480px) {
