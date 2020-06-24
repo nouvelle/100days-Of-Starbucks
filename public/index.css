@@ -103,7 +103,6 @@ img {
   border-radius: 50%;
 }
 
-
 @media (max-width: 480px) {
   #logo {
     font-size: 30px;
@@ -111,5 +110,7 @@ img {
   .large-window {
     width: 350px;
     height: 350px;
+    background-attachment: initial;
+    background-position: bottom center;
   }
 }
