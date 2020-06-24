@@ -105,7 +105,7 @@ img {
 #tweet-box figcaption {
   position: absolute;
   bottom: 10px;
-  left: -100%;
+  left: -1000%;
   background: #000;
   color: #fff;
   padding: 4px 8px;
@@ -114,23 +114,60 @@ img {
 }
 
 /* large-window */
-.large-window {
+#large-window {
   width: 480px;
   height: 480px;
   margin: 0 auto;
   background-image: url("./img/tate04.jpg");
   background-position: top center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-repeat: repeat-y;
   margin-top: 100px;
   border-radius: 50%;
+  position: relative;
+}
+#window-tint {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pic-text {
+  color: #fff;
+  font-size: 50px;
+}
+.pic-text strong {
+  display: block;
+  font-size: 30px;
+}
+.pic-text span {
+  font-size: 18px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+}
+.twitter-link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+.twitter-link:hover {
+  background: rgba(255,255,255,0.7);
+  color: #000;
 }
 
 @media (max-width: 480px) {
   #logo {
     font-size: 30px;
   }
-  .large-window {
+  #large-window {
     width: 350px;
     height: 350px;
     background-attachment: initial;
