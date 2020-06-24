@@ -23,7 +23,8 @@ window.onscroll = () => {
     for(let i = 0; i < figure.length; i++){
       setTimeout(() => {
         figure[i].classList.add("is-showing");
-      }, 150 * (i + 1));
+      // }, 150 * (i + 1));
+      },  (700 * (Math.exp(i * 0.14))) - 700);
     }
   }
 
