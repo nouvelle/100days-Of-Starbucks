@@ -239,17 +239,8 @@ footer a {
     background-position: bottom center;
   }
 }
-/* For devices larger than 550px */
+/* For devices 550px ~ */
 @media (min-width: 550px) {
-  #logo {
-    font-size: 30px;
-  }
-  #large-window {
-    width: 350px;
-    height: 350px;
-    background-attachment: initial;
-    background-position: bottom center;
-  }
   .columns {
     margin-left: 4%;
   }
