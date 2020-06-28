@@ -1,0 +1,101 @@
+$test : 20vmin;
+.App-logo {
+  height: $test;
+}
+
+body {
+  font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #ccc;
+  font-size: 40px;
+}
+
+figure {
+  margin: auto;
+}
+
+p {
+  margin: 30px 0;
+}
+.content {
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 400px;
+  overflow: hidden;
+  z-index: 2;
+}
+.content article {
+  padding: 100px 0;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+}
+
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive
+–––––––––––––––––––––––––––––––– */
+/* For devices ~ 550px */
+@media (max-width: 550px) {
+  #logo {
+    font-size: 30px;
+  }
+  #large-window {
+    width: 350px;
+    height: 350px;
+    background-attachment: initial;
+    background-position: bottom center;
+  }
+  .no-sp {
+    display: none;
+  }
+}
+/* For devices 550px ~ */
+@media (min-width: 550px) {
+  .columns {
+    margin-left: 4%;
+  }
+  .columns:first-child {
+    margin-left: 0;
+  }
+  .one.columns  { width: 4.66666666667%; }
+  .two.columns  { width: 13.3333333333%; }
+  .three.columns{ width: 22%; }
+  .four.columns { width: 30.6666666667%; }
+  .five.columns { width: 39.3333333333%; }
+  .six.columns  { width: 48%; }
+  .seven.columns{ width: 56.6666666667%; }
+  .eight.columns{ width: 65.3333333333%; }
+  .nine.columns { width: 74.0%; }
+}

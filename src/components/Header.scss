@@ -1,0 +1,22 @@
+.home-box {
+  position: relative;
+  height: 600px;
+  background-image: url(../img/home.jpg);
+  background-size: auto 600px;
+  background-position: top center;
+  background-attachment: fixed;
+  overflow: hidden;
+  z-index: 3;
+}
+#logo {
+  font-size: 45px;
+  font-family: 'Kranky', cursive;
+  width: 100%;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  color: #fff;
+}
