@@ -4,7 +4,6 @@ import './LargeWindow.scss';
 
 function LargeWindow() {
   const yScroll = useSelector(state => state.yScroll);
-  const windowTint = document.getElementById("window-tint");
   const [opacity, setOpacity] = useState(1);
 
   function animation(el) {

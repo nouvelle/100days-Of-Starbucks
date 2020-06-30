@@ -9,7 +9,7 @@ const initState = {
 function reducer(state = initState, action) {
   switch(action.type){
     case "SET_Y_SCROLL":
-      return {...state, yScroll: action.yScroll_acvive };
+      return {...state, yScroll: action.yScroll };
     default:
       return state;
   }

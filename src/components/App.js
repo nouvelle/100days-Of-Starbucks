@@ -1,20 +1,19 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Header from './Header';
 import Section from './Section';
 import Footer from './Footer';
 import './App.scss';
 
 function App() {
-  const yScroll = useSelector(state => state.yScroll);
   const dispatch = useDispatch();
   
   window.addEventListener('scroll', () => {
-    let yScroll_acvive = window.scrollY
-    // console.log(yScroll);
+    let yScroll = window.scrollY;
+
     dispatch({
       type: "SET_Y_SCROLL",
-      yScroll_acvive
+      yScroll
     })
   });
 
