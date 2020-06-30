@@ -1,5 +1,5 @@
 window.onscroll = () => {
-  const logo = document.getElementById("logo");
+  // const logo = document.getElementById("logo");
   // const backHome = document.getElementById("back-home");
   // const foreHome = document.getElementById("fore-home");
   const tweetBox = document.getElementById("tweet-box");
@@ -11,9 +11,9 @@ window.onscroll = () => {
   const post2 = document.getElementById("post-2");
   const post3 = document.getElementById("post-3");
   let yScroll = window.pageYOffset
-  console.log(yScroll);
+  // console.log(yScroll);
 
-  logo.style.transform = `translate(0px, ${yScroll /2}%)`;
+  // logo.style.transform = `translate(0px, ${yScroll /2}%)`;
   // backHome.style.transform = `translate(0px, ${yScroll /4}%)`;
   // foreHome.style.transform = `translate(0px, -${yScroll /10}%)`;
 
