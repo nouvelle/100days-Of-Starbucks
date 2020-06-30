@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from "react-redux";
 import './LargeWindow.scss';
 
 function LargeWindow() {
   const yScroll = useSelector(state => state.yScroll);
   const windowTint = document.getElementById("window-tint");
+  const [opacity, setOpacity] = useState(1);
 
   function animation(el) {
     if(yScroll > el.offsetTop - window.innerHeight){
       el.style.backgroundPosition = `center ${yScroll - el.offsetTop}px`;
   
-      const opacity = (yScroll - el.offsetTop + 400) / (yScroll / 5);
-      windowTint.style.opacity = `${opacity}`;
+      const newOpacity = (yScroll - el.offsetTop + 400) / (yScroll / 5);
+      setOpacity(newOpacity)
     }
   }
 
@@ -28,7 +29,10 @@ function LargeWindow() {
         animation(el);
       }}>
         <div id="window-tint">
-          <div className="pic-text">I love Coffee <strong>:)</strong><a className="twitter-link" href="https://twitter.com/hashtag/100DaysOfStarbucks?f=live">#100DaysOfStarbucks</a></div>
+          <div className="pic-text" styles={`opacity: ${opacity}`}>
+            I love Coffee <strong>:)</strong>
+            <a className="twitter-link" href="https://twitter.com/hashtag/100DaysOfStarbucks?f=live">#100DaysOfStarbucks</a>
+            </div>
         </div>
       </div>
     </>
