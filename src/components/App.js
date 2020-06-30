@@ -11,7 +11,7 @@ function App() {
   
   window.addEventListener('scroll', () => {
     let yScroll_acvive = window.scrollY
-    console.log(yScroll);
+    // console.log(yScroll);
     dispatch({
       type: "SET_Y_SCROLL",
       yScroll_acvive

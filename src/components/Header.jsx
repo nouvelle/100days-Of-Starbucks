@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { css } from "emotion";
 import './Header.scss';
 
 function Header() {
@@ -9,7 +8,7 @@ function Header() {
   return (
     <>
       <header className="home-box">
-        <div id="logo" className={css`
+        <div id="logo" styles={`
           transform: translate(0px, ${yScroll /2}%)
         `}>#100DaysOfStarbucks</div>
       </header>

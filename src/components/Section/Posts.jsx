@@ -1,7 +1,21 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import './Posts.scss';
 
 function Posts() {
+  const yScroll = useSelector(state => state.yScroll);
+  const post1 = document.getElementById("post-1");
+  const post3 = document.getElementById("post-3");
+
+  function animation(el) {
+    if(yScroll > el.offsetTop - window.innerHeight) {
+      const offset = (Math.min(0, yScroll - el.offsetTop + window.innerHeight - 950)).toFixed();
+  
+      post1.style.transform = `translate(${offset}px, ${Math.abs(offset * 0.2)}px)`;
+      post3.style.transform = `translate(${Math.abs(offset)}px, ${Math.abs(offset * 0.2)}px)`;
+    }
+  }
+  
   return (
     <>
     <h1>My 100days journey</h1>
@@ -10,7 +24,11 @@ function Posts() {
       ひとりのお客様、一杯のコーヒー、そしてひとつのコミュニティから」<br /><br />
       それが、スターバックスのミッションです。</p>
     <hr />
-    <div id="tweet-posts" className="row">
+    <div id="tweet-posts" className="row" ref={el => {
+        // el can be null - see https://reactjs.org/docs/refs-and-the-dom.html#caveats-with-callback-refs
+        if(!el) return;
+        animation(el);
+      }}>
       <div id="post-1" className="post columns four">
         <h5>Tweet title</h5>
         <img src="./img/post68.jpg" alt="" />
