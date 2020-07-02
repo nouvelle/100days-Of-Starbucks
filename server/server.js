@@ -17,8 +17,7 @@ const client = new Twitter({
 // max_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより過去のツイートを取得できる。
 app.get("/api", (req, res) => {
   const { since_id, max_id } = req.query;
-  // tweet_mode=extended をつけると本文やURLの合計が140文字を超えると
-  // extended_entitiesが出力されなくなるので、
+  // 本文やURLの合計が140文字を超えるとextended_entitiesが出力されなくなるので、
   // これを回避するために、Resource URLに"tweet_mode=extended"を付ける
   let params = {
     screen_name: 'e_chai',
@@ -34,28 +33,6 @@ app.get("/api", (req, res) => {
     if (!error) {
       const customizeTweetArr = getSpecificHashTweets(tweets);
       res.send(customizeTweetArr);
-      
-      // const view = customizeTweetArr.map(t => {
-      //   if(t.imgUrl){
-      //     return (`
-      //       <p>
-      //         <div>${t.created_at}</div>
-      //         <div>${t.text}</div>
-      //         <img src=${t.imgUrl} width="200px"/>
-      //         <p>${t.id}</p>
-      //       </p>
-      //     `);
-      //   } else {
-      //     return (`
-      //     <p>
-      //       <div>${t.created_at}</div>
-      //       <div>${t.text}</div>
-      //       <p>${t.id}</p>
-      //     </p>
-      //   `);
-      //   }
-      // });
-      // res.send(view.join(''));
     } else { 
       console.log(error);
       res.send("Hey :(");
