@@ -1,46 +1,55 @@
 {
   "figures": [
     {
+      "id": 0,
       "img": "./img/tate01.jpg",
       "caption": "1st Store in Japan. ",
       "date": "2019/08/02"
     },
     {
+      "id": 1,
       "img": "./img/tate02.jpg",
       "caption": "Frappuccino! ",
       "date": "2020/02/12"
     },
     {
+      "id": 2,
       "img": "./img/tate03.jpg",
       "caption": "drinking coffee Santa ",
       "date": "2019/12/23"
     },
     {
+      "id": 3,
       "img": "./img/tate03.jpg",
       "caption": "drinking coffee Santa ",
       "date": "2019/12/23"
     },
     {
+      "id": 4,
       "img": "./img/tate01.jpg",
       "caption": "1st Store in Japan. ",
       "date": "2019/08/02"
     },
     {
+      "id": 5,
       "img": "./img/tate02.jpg",
       "caption": "Frappuccino! ",
       "date": "2020/02/12"
     },
     {
+      "id": 6,
       "img": "./img/tate01.jpg",
       "caption": "1st Store in Japan. ",
       "date": "2019/08/02"
     },
     {
+      "id": 7,
       "img": "./img/tate02.jpg",
       "caption": "Frappuccino! ",
       "date": "2020/02/12"
     },
     {
+      "id": 8,
       "img": "./img/tate01.jpg",
       "caption": "1st Store in Japan. ",
       "date": "2019/08/02"
