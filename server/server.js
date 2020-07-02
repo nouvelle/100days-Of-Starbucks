@@ -12,6 +12,9 @@ const client = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
+// Serve static assets
+app.use(express.static(path.resolve(__dirname, "..", "build")));
+
 // https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
 // since_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより未来のツイートを取得できる。
 // max_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより過去のツイートを取得できる。
