@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import Header from './Header';
 import Section from './Section';
@@ -15,6 +15,21 @@ function App() {
       type: "SET_Y_SCROLL",
       yScroll
     })
+  });
+
+  function GetPostData() {
+    fetch('/api')
+      .then(data => data.json())
+      .then(postData => {
+        dispatch({
+          type: "SET_POSTDATA",
+          postData
+        })
+      });
+  }
+  
+  useEffect(() => {
+    GetPostData ();
   });
 
   // fetch('/api').then(data => data.json()).then(data => console.log(data));

@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import postsData from "../../../data/posts.json";
+// import postsData from "../../../data/posts.json";
 import './Posts.scss';
 
 function Posts() {
   const yScroll = useSelector(state => state.yScroll);
+  const posts = useSelector(state => state.postData);
   const post = document.getElementsByClassName("post");
-  const posts = postsData.posts;
+  // const posts = postsData.posts;
 
   function animation(el) {
     if(window.innerHeight > el.getBoundingClientRect().top + 50){
@@ -21,8 +22,8 @@ function Posts() {
     if(posts.length > 0) {
       return  posts.map(obj => 
         <div key={obj.id} className="post columns four">
-          <h5>{obj.title}</h5>
           <img src={obj.img} alt="" />
+          <h5>{obj.created_at}</h5>
           <p>{obj.comment}</p>
           <p><a className="btn" href={obj.link}>Read More</a></p>
         </div>
