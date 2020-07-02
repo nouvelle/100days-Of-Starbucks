@@ -1,31 +1,29 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-// import postsData from "../../../data/posts.json";
 import './Posts.scss';
 
 function Posts() {
   const yScroll = useSelector(state => state.yScroll);
   const posts = useSelector(state => state.postData);
   const post = document.getElementsByClassName("post");
-  // const posts = postsData.posts;
 
   function animation(el) {
     if(window.innerHeight > el.getBoundingClientRect().top + 50){
       for(let i = 0; i < post.length; i++){
         setTimeout(() => {
           post[i].classList.add("is-showing");
-        },  (1000 * (Math.exp(i * 0.14))) - 700);
+        }, 300 * (i + 1));
       }
     }
   }
   function PostList() {
     if(posts.length > 0) {
       return  posts.map(obj => 
-        <div key={obj.id} className="post columns four">
+        <div key={obj.id} className="post columns three">
           <img src={obj.img} alt="" />
           <h5>{obj.created_at}</h5>
-          <p>{obj.comment}</p>
-          <p><a className="btn" href={obj.link}>Read More</a></p>
+          <p className="comment">{obj.comment}</p>
+          <p><a className="btn" href={obj.link} target="_blank">Read More</a></p>
         </div>
       );
     }

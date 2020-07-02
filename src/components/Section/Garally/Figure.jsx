@@ -7,7 +7,7 @@ function Figure() {
   function figureList() {
     if(figures.length > 0) {
       return  figures.map(obj => 
-        <figure key={obj.id} className="columns four">
+        <figure key={obj.id} className="columns three">
           <img src={obj.img} alt="" />
           <figcaption>{obj.captipn} <strong>{obj.date}</strong></figcaption>
         </figure>

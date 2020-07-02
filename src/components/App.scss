@@ -30,7 +30,7 @@ p {
 }
 .content article {
   padding: 100px 0;
-  max-width: 640px;
+  max-width: 750px;
   margin: 0 auto;
   text-align: center;
 }
@@ -86,13 +86,11 @@ img {
   .columns {
     margin-left: 2%;
   }
-  .one.columns  { width: 4.66666666667%; }
-  .two.columns  { width: 13.3333333333%; }
-  .three.columns{ width: 22%; }
-  .four.columns { width: 30%; }
-  .five.columns { width: 39.3333333333%; }
-  .six.columns  { width: 48%; }
-  .seven.columns{ width: 56.6666666667%; }
-  .eight.columns{ width: 65.3333333333%; }
-  .nine.columns { width: 74.0%; }
+  .one.columns  { width: 100%; }
+  .two.columns  { width: 48%; }
+  .three.columns{ width: 30%; }
+  .four.columns { width: 23%; }
+  .five.columns { width: 18%; }
+  .six.columns  { width: 13.3%; }
+  .seven.columns{ width: 12%; }
 }

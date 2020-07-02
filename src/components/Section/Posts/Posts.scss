@@ -1,9 +1,12 @@
 #tweet-posts {
   margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .post {
   border: 1px solid #e1e1e1;
-  padding: 20px 20px 0;
+  margin-bottom: 15px;;
+  padding: 10px 10px 0;
   background: #fff;
   position: relative;
   opacity: 0;
@@ -13,4 +16,12 @@
 .post.is-showing {
   opacity: 1;
   transform: translateY(0px);
+}
+.post h5 {
+  margin: 0;
+  color: #999;
+}
+.comment {
+  font-size: 14px;
+  margin-top: 15px;
 }
