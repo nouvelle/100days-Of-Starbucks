@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Tweet title",
+      "img": "./img/post68.jpg",
+      "link": "https://twitter.com/e_chai/status/1275646396734025728",
+      "comment": "[68/100] #100DaysOfStarbucks <br />ゴロッと イチゴ フラペチーノ🍓<br />"
+    },
+    {
+      "id": 2,
+      "title": "Tweet title",
+      "img": "./img/post67.jpg",
+      "link": "https://twitter.com/e_chai/status/1271041858882252802",
+      "comment": "[67/100] #100DaysOfStarbucks <br />何ヶ月ぶりだろう、イートインスタバ🥺❤️"
+    },
+    {
+      "id": 3,
+      "title": "Tweet title",
+      "img": "./img/post66.jpg",
+      "link": "https://twitter.com/e_chai/status/1270525690396291075",
+      "comment": "[66/100] #100DaysOfStarbucks <br />スタバの と New Mac の初コラボ☀️"
+    }
+  ]
+}
