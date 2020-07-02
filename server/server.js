@@ -2,6 +2,7 @@ const express = require("express");
 const Twitter = require("twitter");
 const { customizeTweets, getSpecificHashTweets } = require("./tweets");
 require("dotenv").config();
+const path = require("path");
 const app = express();
 
 const PORT = process.env.PORT || 2222;
