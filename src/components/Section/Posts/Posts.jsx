@@ -1,8 +1,10 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import postsData from "../../../data/posts.json";
 import './Posts.scss';
 
 function Posts() {
+  const yScroll = useSelector(state => state.yScroll);
   const post = document.getElementsByClassName("post");
   const posts = postsData.posts;
 
