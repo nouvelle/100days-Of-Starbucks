@@ -36,6 +36,11 @@ function App() {
         })
       });
   }
+  function goToTop() {
+    const now = window.pageYOffset;
+    window.scrollTo(0, now - 100);
+    if(now > 0) setTimeout(goToTop, 10);
+  }
   
   useEffect(() => {
     GetPostData ();
@@ -52,6 +57,7 @@ function App() {
       <Header />
       <Section />
       <Footer />
+      <div id="goTop" onClick={goToTop}>↑</div>
     </>
   );
 }

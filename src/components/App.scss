@@ -48,6 +48,20 @@ img {
   display: table;
   clear: both;
 }
+#goTop {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+  background-color: green;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
