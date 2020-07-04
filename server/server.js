@@ -17,8 +17,8 @@ const client = new Twitter({
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 // https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
-// since_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより未来のツイートを取得できる。
-// max_id : ページングに利用する。ツイートのIDを指定すると、これを含まず、これより過去のツイートを取得できる。
+// since_id : ページングに利用する。ツイートのIDを指定すると、これより未来のツイートを取得できる。
+// max_id : ページングに利用する。ツイートのIDを指定すると、これより過去のツイートを取得できる。
 app.get("/api", (req, res) => {
   const { since_id, max_id } = req.query;
   // 本文やURLの合計が140文字を超えるとextended_entitiesが出力されなくなるので、

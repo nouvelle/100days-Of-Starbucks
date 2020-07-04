@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Header from './Header';
 import Section from './Section';
 import Footer from './Footer';
 import './App.scss';
 
 function App() {
+  const lastDataId = useSelector(state => state.lastDataId);
   const dispatch = useDispatch();
   
   window.addEventListener('scroll', () => {
@@ -17,26 +18,35 @@ function App() {
     })
   });
 
-  function GetPostData() {
-    fetch('/api')
+  function GetPostData(param, val) {
+    let url = "/api";
+    if(param) url += `?${param}=${val}`;
+    fetch(url)
       .then(data => data.json())
       .then(postData => {
+        // 前回の最後の投稿と、今回の最初の投稿が同じだからカット
+        if(param) postData = postData.slice(1);
         dispatch({
           type: "SET_POSTDATA",
           postData
+        })
+        dispatch({
+          type: "SET_LAST_DATA_ID",
+          lastDataId: postData[postData.length -1].id
         })
       });
   }
   
   useEffect(() => {
     GetPostData ();
-  });
+  }, []);
 
-  // fetch('/api').then(data => data.json()).then(data => console.log(data));
-  // fetch('/api?max_id=1232608893299093500').then(data => data.json()).then(data => console.log(data));
-  // fetch('/api?max_id=1213973259244331000').then(data => data.json()).then(data => console.log(data));
-  // fetch('/api?max_id=1150713127425589200').then(data => data.json()).then(data => console.log(data));
-  // fetch('/api?max_id=1131925837228339200').then(data => data.json()).then(data => console.log(data));
+  useEffect(() => {
+    setTimeout(() => {
+      if(lastDataId) GetPostData("max_id", lastDataId);
+    }, 1000);
+  }, [lastDataId]);
+
   return (
     <>
       <Header />
