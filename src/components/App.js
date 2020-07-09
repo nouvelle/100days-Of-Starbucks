@@ -25,7 +25,7 @@ function App() {
       .then(data => data.json())
       .then(postData => {
         // 前回の最後の投稿と、今回の最初の投稿が同じだからカット
-        if(param) postData = postData.slice(1);
+        if(param && postData[0].id === lastDataId) postData = postData.slice(1);
         dispatch({
           type: "SET_POSTDATA",
           postData
