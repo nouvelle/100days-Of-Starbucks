@@ -19,7 +19,9 @@ function App() {
   });
 
   const GetPostData = useCallback((param, val) => {
-    let url = "/api";
+    // let url = "/api";
+    // aws: api gateway
+    let url = "https://2tcj5bmtk6.execute-api.us-east-1.amazonaws.com/v1/api";
     if(param) url += `?${param}=${val}`;
     fetch(url)
       .then(data => data.json())
