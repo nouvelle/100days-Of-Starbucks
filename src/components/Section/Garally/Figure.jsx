@@ -3,13 +3,13 @@ import figureData from "../../../data/figures.json";
 
 function Figure() {
   const figures = figureData.figures;
-
+console.log(figures)
   function figureList() {
     if(figures.length > 0) {
       return  figures.map(obj => 
         <figure key={obj.id} className="columns three">
           <img src={obj.img} alt="" />
-          <figcaption>{obj.captipn} <strong>{obj.date}</strong></figcaption>
+          <figcaption>{obj.caption} <strong>{obj.date}</strong></figcaption>
         </figure>
       );
     }
