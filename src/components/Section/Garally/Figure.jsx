@@ -3,7 +3,7 @@ import figureData from "../../../data/figures.json";
 
 function Figure() {
   const figures = figureData.figures;
-console.log(figures)
+
   function figureList() {
     if(figures.length > 0) {
       return  figures.map(obj => 
