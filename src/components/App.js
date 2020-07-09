@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import Header from './Header';
 import Section from './Section';
@@ -18,7 +18,7 @@ function App() {
     })
   });
 
-  function GetPostData(param, val) {
+  const GetPostData = useCallback((param, val) => {
     let url = "/api";
     if(param) url += `?${param}=${val}`;
     fetch(url)
@@ -35,7 +35,9 @@ function App() {
           lastDataId: postData[postData.length -1].id
         })
       });
-  }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lastDataId]);
+  
   function goToTop() {
     const now = window.pageYOffset;
     window.scrollTo(0, now - 100);
@@ -44,12 +46,14 @@ function App() {
   
   useEffect(() => {
     GetPostData ();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
       if(lastDataId) GetPostData("max_id", lastDataId);
     }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastDataId]);
 
   return (

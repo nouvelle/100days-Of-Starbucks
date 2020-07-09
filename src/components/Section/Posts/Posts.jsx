@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import './Posts.scss';
 
 function Posts() {
+  // eslint-disable-next-line
   const yScroll = useSelector(state => state.yScroll);
   const posts = useSelector(state => state.postData);
   const post = document.getElementsByClassName("post");
@@ -12,7 +13,7 @@ function Posts() {
       for(let i = 0; i < post.length; i++){
         setTimeout(() => {
           post[i].classList.add("is-showing");
-        }, 300 * (i + 1));
+        }, 350 * (i + 1));
       }
     }
   }
@@ -23,7 +24,7 @@ function Posts() {
           <img src={obj.img} alt="" />
           <h5>{obj.created_at}</h5>
           <p className="comment">{obj.comment}</p>
-          <p><a className="btn" href={obj.link} target="_blank">Read More</a></p>
+          <p><a className="btn" href={obj.link} target="_blank" rel="noopener noreferrer">Read More</a></p>
         </div>
       );
     }

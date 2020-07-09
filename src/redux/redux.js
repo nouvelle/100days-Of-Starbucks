@@ -13,7 +13,7 @@ function reducer(state = initState, action) {
     case "SET_Y_SCROLL":
       return {...state, yScroll: action.yScroll };
     case "SET_POSTDATA":
-      if(JSON.stringify(state.postData) == JSON.stringify(action.postData)){
+      if(JSON.stringify(state.postData) === JSON.stringify(action.postData)){
         return {...state, postData: action.postData };
       } else {
         if(action.postData[action.postData.length - 1].id === 1114912749975265300) action.postData = action.postData.slice(0, action.postData.length-1);
