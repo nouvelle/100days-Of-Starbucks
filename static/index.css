@@ -62,7 +62,7 @@ img {
   width: 960px;
   height: 320px;
   /* background-color: rgba(56, 250, 56, 0.3); */
-  background-image: url(./slime.png);
+  background-image: url(./favicon.ico);
   background-repeat: no-repeat;
   background-position: right bottom;
   position: absolute;
@@ -74,7 +74,7 @@ img {
   width: 960px;
   height: 320px;
   /* background-color: rgba(56, 250, 56, 0.3); */
-  background-image: url(./slime.png);
+  background-image: url(./favicon.ico);
   background-repeat: no-repeat;
   background-position: top left;
   position: absolute;
